@@ -1,0 +1,107 @@
+#include <iostream>
+
+using namespace std;
+
+void inteiro();
+void parouimpar();
+void soma();
+void volum();
+void potencia();
+void fatorial();
+void area();
+void bissexto();
+
+int main(){
+    inteiro();
+    parouimpar();
+    soma();
+    volum();
+    potencia();
+    fatorial();
+    area();
+    bissexto();
+    
+}
+
+//A-1
+void inteiro(){
+    int n;
+    cin >> n;
+    if (n % 4 == 0){
+        cout << "e um numero multiplo de 4";
+    }
+    else {
+        cout << "nao e um numero multiplo de 4";
+    }
+}
+// A-2
+    void parouimpar(){
+        int x; 
+        cin >> x;
+        if(x % 2 == 0){
+            cout << x << "e um numero par" << endl;
+        }
+        else {
+            cout << x << "e um numero impar" << endl;
+        }
+    }
+    //A-3
+    void soma(){
+        int a, b, s;
+        cin >> a >> b;
+        if (a < b){
+            for (int i=a; i=b; i++ ){
+                s += i;
+            }
+        }
+    }
+    // A 4
+    void volum(){
+        int v, ra, pii=3.14;
+        cin >> ra;
+        v = (4 * π *ra /3);
+        cout << v << endl;
+    }
+    // A 5
+    void fatorial(){
+    int resultado = 1, num;
+    cin >> num;
+    for (int i = 1; i <= num; i++) {
+        resultado *= i;
+        cout << resultado << endl;
+    }
+    }
+    // A 6
+    void potencia() {
+    int res = 1, b, ex;
+    cin >> b >> ex;
+    for (int i = 0; i < ex; ++i) {
+        res *= b;
+    }
+    cout << b << "^" << ex << " = " << res << endl;
+    }
+
+    void area(){
+        int r, pi=3.14 a; 
+        cin >> r;
+        a = p * r^2;
+        cout << "a area é:" << a << endl;
+    }
+    void bissexto(){
+        int a; 
+        cin >> a;
+        if (a % 4 == 0 && a % 100 != 0){
+            cout << "é um ano bissexto" << endl;
+        }
+    }
+    void temperatura(){
+        int f, c;
+        cin >> c;
+        f = c * 9 / 5 + 32;
+        cout << f << endl;
+    }
+    //C
+    //1. Funçoes são "trechos de codigos" que faciliitam na organização do codigo, diminuição de linhas e na correção de erros
+    //2. São variáveis passados para uma função quando ela é chamada. Eles permitem que a função receba dados e trabalhe com eles
+    //3.Podemos ter funçoes com retor, sem retorno, entre outras.
+    //4.void seria uma função sem retorno
