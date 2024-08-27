@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+//A
+//1. Serão impressos o número 5 e o endereço de memoria de i respectivamente;
+// 2. Serão impressos os endereços de memória de conta, salário e resposta;
+//3. valor = 55, p=endereço de memória de num, *p=55;
+//B
+//1.e;
+//2.c;
+//3. Em b, i recebe o valor para que o ponteiro está apontado;
+//C. A alternativa 5;
+
+
+int main(){
+    float numero1=7.3; 
+    float numero2;
+    float *fp;
+    fp = &numero1;
+    cout << *fp << endl;
+    numero2 = *fp;
+    cout << numero2 << endl;
+    cout << &numero1 << endl;
+    cout << &fp << endl; 
+    //o endereço nao é o mesmo;
+}
