@@ -1,0 +1,110 @@
+//1. Na linha 21 é impresso o nome como digitado, já na 23 ele aparece com a letra inicial maiuscula conforme as modificaçoes da funçao 
+// 2. Funçoes void nao possuem retorno, somente as funçoes int; As funçoes de retorno sao as funçoes int dobro e int aleat,
+// os parametros estao declarados nas funçoes somene como int.
+#include <iostream>
+#include <cstdlib> 
+
+using namespace std;
+
+void bom_dia();
+int aleat();
+int dobro(int);
+void mostra_dobro(int);
+
+int main() {
+    int x = 0, num = 0;
+
+    srand(time(NULL));
+
+    bom_dia();
+    cout << aleat() << endl;
+    x = aleat();
+    num += dobro(x);
+    if (dobro(x) > dobro(aleat())) {
+        mostra_dobro(x);
+    }
+    return 0;
+}
+void bom_dia() {
+    cout << "Bom dia!" << endl;
+}
+int aleat() {
+    return rand() % 100 + 1;
+}
+int dobro(int n) {
+    return 2 * n;
+}
+void mostra_dobro(int n) {
+    cout << "O dobro de " << n << " é " << dobro(n) << endl;
+}
+
+
+//3. int rand (void); retorna um numero aleatório inteiro
+// void srand (unsigned int seed); inicializa os numeros aleatorios com o valor seed.
+// int atoi (const char * str); Converte uma string C (um ponteiro para um array de caracteres terminados em \0) em um valor inteiro (int).
+// 4.
+#include <iostream>
+
+using namespace std;
+
+int globalvar = 10;
+
+void modificar() {
+    int localvar = 20;
+
+    if (localvar > 10) {
+        int blockvar = 30;
+        globalvar = 40;
+    }
+}
+
+int main() {
+    cout << "Valor da variavel global antes da funcao: " << globalvar << endl;
+
+    modificar();
+
+    cout << "Valor da variavel global apos a funcao: " << globalvar << endl;
+
+    return 0;
+}
+//5.
+#include <iostream>
+
+using namespace std;
+
+double arearetangulo(double comprimento, double largura);
+
+int main() {
+    double comprimento, largura, area;
+    cin >> comprimento;
+    cin >> largura;
+    area = arearetangulo(comprimento, largura);
+
+    cout << "A área do retângulo é: " << area << endl;
+
+    return 0;
+}
+
+double arearetangulo(double comprimento, double largura) {
+    return comprimento * largura;
+}
+//6.
+#include <iostream>
+#include <cstdlib> 
+
+using namespace std;
+
+int gerarNumeroAleatorio();
+
+int main() {
+    int numero = gerarNumeroAleatorio();
+    cout << "Numero aleatorio gerado: " << numero << endl;
+
+    return 0;
+}
+
+int gerarNumeroAleatorio() {
+    srand(time(NULL));
+    
+    return rand() % 100 + 1;
+}
