@@ -5,4 +5,4 @@
 5. Linha 3 num=11; Linha 9 i=11;
 6. Linha 4 a=8; Linha 5 b=7; Linha 11 x=11; Linha 12 y=2;
 7.A. Linha 12 se a for menor ou igual a b, então serao exibidos os valores de a, b e o valor de s/z;
-B. É possivel, pois o ponteiro de z asta apontando para seu endereço de memoria e isso nao impede de ler um valor.
+B. Não é possível.
