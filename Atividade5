@@ -1,0 +1,147 @@
+//Exercício 1
+#include <iostream>
+
+using namespace std;
+
+int multiplicacao(int n1, int n2);
+
+int main(){
+    int x=2, y=3;
+    cout << multiplicacao(x, y) << endl;
+}
+int multiplicacao(int n1, int n2){
+    int m;
+    m = n1 * n2;
+    return m;
+}
+// Exercício 2
+#include <iostream>
+
+using namespace std;
+
+int mult(int (*a), int (*b));
+
+int main(){
+    int x = 2, y = 4;
+    cout << mult(&x, &y) << endl; 
+}
+
+int mult(int (*a), int (*b)){
+    int m;
+    m = (*a) * (*b);
+    return m;
+}
+//Exercício 3
+#include <iostream>
+
+using namespace std;
+
+int soma(int a);
+
+int main(){
+    int x=2; 
+    cout << soma(x) << endl;
+}
+int soma(int a){
+    int s;
+    s = a + 10;
+    return s;
+}
+//Exercício 4
+#include <iostream>
+using namespace std;
+
+int soma(int *a);
+
+int main(){
+    int x=2; 
+    cout << soma(&x) << endl;
+}
+int soma(int *a){
+    int s;
+    s = *a + 10;
+    return s;
+}
+//Exercício 5
+#include <iostream>
+
+using namespace std;
+int sub(int a);
+
+int main(){
+    int x=5;
+    cout << sub(x) << endl;
+}
+int sub(int a){
+    int s;
+    s = a - 5;
+    return s;
+}
+//Exercício 6
+#include <iostream>
+
+using namespace std;
+int sub(int *a);
+
+int main(){
+    int x=5;
+    cout << sub(&x) << endl;
+}
+int sub(int *a){
+    int s;
+    s = *a - 5;
+    return s;
+}
+//Exercício 7
+#include <iostream>
+#include <algorithm> 
+using namespace std;
+
+void inverter(int (&arr)[5]);
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    inverter(arr);
+
+    cout << "invertido: ";
+    for (int i = 0; i < 5; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+void inverter(int (&arr)[5]) {
+    int inicio = 0;
+    int fim = 4; 
+
+    while (inicio < fim) {
+        swap(arr[inicio], arr[fim]);
+        inicio++;
+        fim--;
+    }
+}
+//Exercicio 8
+#include <iostream>
+using namespace std;
+
+string converterParaMaiusculas(string nome);
+
+int main() {
+    string aluno;
+
+    getline(cin, aluno);                 
+    cout << converterParaMaiusculas(aluno) << endl;  
+    return 0;
+}
+string converterParaMaiusculas(string nome) {
+    int i = 0;
+    while (i < nome.length()) {
+        if ((nome[i] < 65 || nome[i] > 90) && (i == 0 || nome[i - 1] == ' ')) {
+            nome[i] -= 32;  
+        i++;
+    }
+    return nome;
+}
+}
