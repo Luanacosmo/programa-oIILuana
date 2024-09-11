@@ -1,0 +1,137 @@
+// A 
+//1.
+#include <iostream>
+using namespace std;
+
+void ordenar(int &a, int &b) {
+    if (a > b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+}
+
+int main() {
+    int a, b;
+    cout << "Digite dois valores: ";
+    cin >> a >> b;
+
+    ordenar(a, b);
+
+    cout << "Valores ordenados: " << a << " " << b << endl;
+    
+    return 0;
+}
+//2.
+#include <iostream>
+using namespace std;
+
+void decomporDouble(double x, int *int_part, double *frac_part) {
+    *int_part = (int)x;
+    *frac_part = x - *int_part;
+}
+
+int main() {
+    double x, frac_part;
+    int int_part;
+    cout << "Digite um valor decimal: ";
+    cin >> x;
+
+    decomporDouble(x, &int_part, &frac_part);
+    
+    cout << "Parte inteira: " << int_part << endl;
+    cout << "Parte fracionária: " << frac_part << endl;
+
+    return 0;
+}
+//B
+ bool has_zero(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (a[i] == 0) {
+            return true; //  se encontrar um zero
+        }
+    }
+    return false; // Se não encontrar nenhum zero, retorna false
+}
+//C
+#include <iostream>
+using namespace std;
+
+// 1. Função que retorna o maior valor do vetor
+int maiorValor(int a[], int n) {
+    int maior = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] > maior) {
+            maior = a[i];
+        }
+    }
+    return maior;
+}
+
+// 2. Função que retorna a média dos elementos do vetor
+double mediaVetor(int a[], int n) {
+    int soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += a[i];
+    }
+    return static_cast<double>(soma) / n;
+}
+
+// 3. Função que conta quantos elementos do vetor são positivos
+int contarPositivos(int a[], int n) {
+    int contador = 0;
+    for (int i = 0; i < n; i++) {
+        if (a[i] > 0) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+// 4. Função que insere valores em um vetor
+void inserirValores(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Digite o valor para a posição " << i << ": ";
+        cin >> a[i];
+    }
+}
+
+// 5. Função que encontra o maior e o menor valor do vetor (passagem por referência)
+void maiorMenor(int a[], int n, int &maior, int &menor) {
+    maior = a[0];
+    menor = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] > maior) {
+            maior = a[i];
+        }
+        if (a[i] < menor) {
+            menor = a[i];
+        }
+    }
+}
+
+int main() {
+    int n;
+    
+    cout << "Digite o número de elementos do vetor: ";
+    cin >> n;
+    
+    int a[n];
+    
+    inserirValores(a, n);
+    
+    cout << "Maior valor: " << maiorValor(a, n) << endl;
+    
+    cout << "Média dos valores: " << mediaVetor(a, n) << endl;
+    
+    cout << "Quantidade de valores positivos: " << contarPositivos(a, n) << endl;
+    
+    int maior, menor;
+    maiorMenor(a, n, maior, menor);
+    cout << "Maior valor: " << maior << " e Menor valor: " << menor << endl;
+    
+    return 0;
+}
+//D
+//6. a soma de todos os numeros de y a z;
+//7. se o numero possui ou nao as caracteristicas da funçao (se o quadrado da soma, da divisao por 100, da sua parte inteira com o resto for igual a ele mesmo);
