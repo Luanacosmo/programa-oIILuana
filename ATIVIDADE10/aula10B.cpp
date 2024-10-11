@@ -24,13 +24,13 @@ int main() {
 
 void inserir(int *v, int n) {  
     for (int i = 0; i < n; i++) {
-        *(v + i) = i * 2;  // Aritmética de ponteiros
+        *(v + i) = i * 2;  
     }
 }
 
 void imprimir(int *v, int n) {
     for (int i = 0; i < n; i++) {
-        cout << *(v + i) << " ";  // Aritmética de ponteiros
+        cout << *(v + i) << " ";  
     }
     cout << endl;
 }
