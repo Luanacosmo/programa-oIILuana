@@ -1,1 +1,32 @@
+I-
+V1 = {7, 5, 5, 3}
+Divisão 1
+{7, 5}  {5, 3}
+Divisão 2
+{7} {5} {5} {3}
+Ordenação
+{5, 7}  {3, 5}
+ Merge
+{3, 5, 5, 7}
 
+V2 = {1, 2, 3, 4}
+Divisão
+{1, 2}  {3, 4}
+{1} {2} {3} {4}
+Ordenação
+{1, 2} e {3, 4}
+Merge
+{1, 2, 3, 4}
+
+V3 = {4, 3, 2, 1}
+Divisão
+{4, 3} e {2, 1}
+{4} {3} {2} {1}
+Ordenação
+{3, 4} e {1, 2}
+ Merge
+{1, 2, 3, 4}
+
+II-nenhuma pois o vetor v2 já estava ordenada
+III- trocar os sinais de menor por maior
+IV- v = {2, 3, 4, 5, 6, 6, 7, 8, 9}
