@@ -1,1 +1,108 @@
+#include <iostream>
 
+// Quick Sort
+void quickSort(int arr[], int low, int high) {
+  if (low < high) {
+    int pivô = arr[low];
+    int i = low + 1;
+    int j = high;
+
+    while (i <= j) {
+      while (arr[i] <= pivô && i <= high) i++;
+      while (arr[j] > pivô && j >= low) j--;
+
+      if (i <= j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+      }
+    }
+
+    arr[low] = arr[j];
+    arr[j] = pivô;
+
+    quickSort(arr, low, j - 1);
+    quickSort(arr, j + 1, high);
+  }
+}
+
+// Heap Sort
+void heapSort(int arr[], int n) {
+  for (int i = n / 2 - 1; i >= 0; i--) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left < n && arr[left] > arr[largest]) largest = left;
+    if (right < n && arr[right] > arr[largest]) largest = right;
+
+    if (largest != i) {
+      int temp = arr[i];
+      arr[i] = arr[largest];
+      arr[largest] = temp;
+    }
+  }
+
+  for (int i = n - 1; i >= 0; i--) {
+    int temp = arr[0];
+    arr[0] = arr[i];
+    arr[i] = temp;
+
+    int largest = 0;
+    int left = 2 * largest + 1;
+    int right = 2 * largest + 2;
+
+    while (left < i) {
+      if (right < i && arr[right] > arr[left]) largest = right;
+      else largest = left;
+
+      if (arr[largest] > arr[0]) {
+        temp = arr[0];
+        arr[0] = arr[largest];
+        arr[largest] = temp;
+      }
+
+      largest = 0;
+      left = 2 * largest + 1;
+      right = 2 * largest + 2;
+    }
+  }
+}
+Quick Sort
+V= [5, 2, 8, 3, 1, 6, 4]
+1. Escolha o pivô: 5
+2. Sub-array menor: [2, 3, 1, 4]
+Sub-array maior: [8, 6]
+3. Recursivamente, ordene os sub-arrays:
+Sub-array menor: [1, 2, 3, 4]
+Sub-array maior: [6, 8]
+4. Combine os sub-arrays: [1, 2, 3, 4, 5, 6, 8]
+
+ Heap Sort
+Array Original:
+
+[5, 2, 8]
+
+Passo 1: Construir a Heap
+8
+/ 
+5   2
+Passo 2: Remover o Maior Elemento (8) e Colocar no Fim do Array
+ 5
+/ 
+2
+Array Atual:
+[5, 2, 8]
+Passo 3: Reconstruir a Heap
+5
+/ 
+2
+Passo 4: Remover o Maior Elemento (5) e Colocar no Fim do Array
+2
+Array Atual:
+[2, 5, 8]
+Passo 5: Não há mais elementos para remover, o array está ordenado.
+Array Ordenado:
+[2, 5, 8]
