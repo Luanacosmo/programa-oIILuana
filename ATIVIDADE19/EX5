@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+bool duasSomas(int v[], int n, int alvo, int &indice1, int &indice2) {
+    int i = 0;        // Ponteiro no início do array
+    int j = n - 1;    // Ponteiro no final do array
+
+    while (i < j) {
+        int soma = v[i] + v[j];
+        if (soma == alvo) {
+            indice1 = i;  // Armazena o índice do primeiro elemento
+            indice2 = j;  // Armazena o índice do segundo elemento
+            return true;  // Solução encontrada
+        } else if (soma < alvo) {
+            i++;          // Move o ponteiro da esquerda para a direita
+        } else {
+            j--;          // Move o ponteiro da direita para a esquerda
+        }
+    }
+    return false;         // Nenhuma solução encontrada
+}
+
+int main() {
+    int v[] = {1, 2, 3, 4, 6, 8, 10};  // Array ordenado
+    int n = sizeof(v) / sizeof(v[0]); // Tamanho do array
+    int alvo = 10;
+    int indice1, indice2;             // Variáveis para armazenar os índices
+
+    if (duasSomas(v, n, alvo, indice1, indice2)) {
+        cout << "Índices encontrados: " << indice1 << " e " << indice2 << endl;
+    } else {
+        cout << "Nenhuma combinação encontrada." << endl;
+    }
+
+    return 0;
+}
