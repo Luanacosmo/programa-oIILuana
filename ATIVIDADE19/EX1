@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int buscaBinaria(int v[], int n, int x) {
+  int esquerda = 0;
+  int direita = n - 1;
+
+  while (esquerda <= direita) {
+    int meio = (esquerda + direita) / 2;
+
+    if (v[meio] == x) {
+      return meio;
+    } else if (v[meio] < x) {
+      esquerda = meio + 1;
+    } else {
+      direita = meio - 1;
+    }
+  }
+
+  if (esquerda > 0) {
+    return esquerda - 1;
+  } else {
+    return -1;
+  }
+}
+
+int main() {
+  int v[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+  int n = sizeof(v) / sizeof(v[0]);
+  int x = 5;
+
+  int indice = buscaBinaria(v, n, x);
+
+  if (indice != -1) {
+    cout << "Índice j: " << indice << endl;
+    cout << "v[j] = " << v[indice] << endl;
+    cout << "v[j+1] = " << v[indice + 1] << endl;
+  } else {
+    cout << "Não encontrado." << endl;
+  }
+
+  return 0;
+}
