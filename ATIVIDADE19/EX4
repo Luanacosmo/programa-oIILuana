@@ -1,0 +1,18 @@
+int busca_binaria(int x, int *v, int n) {
+  int ini = 0;
+  int fim = n - 1;
+  int resultado = n; // Inicializa resultado com valor fora do vetor
+
+  while (ini <= fim) {
+    int meio = (ini + fim) / 2;
+
+    if (v[meio] >= x) {
+      resultado = meio; // Atualiza resultado
+      fim = meio - 1; // Busca na metade esquerda
+    } else {
+      ini = meio + 1; // Busca na metade direita
+    }
+  }
+
+  return (resultado == n) ? -1 : resultado; // Retorna -1 se não encontrado
+}
