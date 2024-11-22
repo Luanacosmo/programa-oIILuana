@@ -1,0 +1,26 @@
+int busca_binaria(int x, int *v, int n) {
+  int ini = 0;
+  int fim = n - 1;
+
+  while (ini <= fim) {
+    int i = (ini + fim) / 2;
+
+    if (v[i] == x) {
+      return i;
+    }
+
+    if (v[i] < x) {
+      if (i == n - 1 || v[i + 1] >= x) {
+        return i + 1;
+      }
+      ini = i + 1;
+    } else {
+      if (i == 0 || v[i - 1] <= x) {
+        return i;
+      }
+      fim = i - 1;
+    }
+  }
+
+  return -1; // Não encontrado
+}
