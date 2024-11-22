@@ -1,0 +1,10 @@
+int busca_sequencial_recursiva(int x, int *v, int n, int i) {
+  if (i >= n) return -1; // Caso base: fim do vetor
+  if (v[i] == x) return i; // Caso base: encontrado
+  return busca_sequencial_recursiva(x, v, n, i + 1); // Recursão
+}
+
+// Função auxiliar para inicializar a busca
+int busca_sequencial(int x, int *v, int n) {
+  return busca_sequencial_recursiva(x, v, n, 0);
+}
